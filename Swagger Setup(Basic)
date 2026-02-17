@@ -1,0 +1,25 @@
+Swagger Setup(Basic) 
+
+In server.js add: 
+
+Javascript 
+
+const swaggerUi = 
+require("swagger-ui-express"); 
+const swagger Jsdoc = 
+require("swagger-jsdoc);
+
+const options = {
+    definition: {
+        openapi: "3.0.0", 
+        info: {
+            title: "Karibu Groceries API", 
+            version: "1.0.0", 
+        },
+    },  
+    apis: ["./routes/*.js], 
+}; 
+
+const specs = swaggerJsdoc(options); 
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs)); 
